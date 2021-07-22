@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet"   
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	 crossorigin="anonymous">
+
+<link rel="icon" type="image/png" href="favicon.png" />
+
+
+<title>Job Application Manager</title>
+</head>
+<body>
+<!-- Image and text -->
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+
+    
+    Job Application Manager
+  </a>
+</nav>
+<div align="center">
+    <h1>Job List</h1>
+    <a href="/new">Add New Job Application </a>
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Job ID</th>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Salary</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="job : ${listJobs}">
+                <td th:text="${job.id}">Job ID</td>
+                <td th:text="${job.name}">Name</td>
+                <td th:text="${job.location}">Location</td>
+                <td th:text="${job.salary}">Salary</td>
+                
+                <td>
+	                <a th:href="@{'/edit/' + ${job.id}}">Edit</a>
+                	&nbsp;&nbsp;&nbsp;
+                	<a th:href="@{'/delete/' + ${job.id}}">Delete</a>
+           		</td>
+            </tr>
+        </tbody>
+    </table>
+</div>   
+</body>
+</html>

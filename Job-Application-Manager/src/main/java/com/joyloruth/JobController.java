@@ -19,12 +19,12 @@ public class JobController {
 		@Autowired
 		private JobService jobService; 
 		
-		@RequestMapping("/")
+		@RequestMapping("/list")
 		public String viewHomePage(Model model) {
 			List<Job> listJobs = jobService.listAll();
 			model.addAttribute("listJobs", listJobs);
 			
-			return "index";
+			return "job_list";
 		}
 		
 		@RequestMapping("/new")
