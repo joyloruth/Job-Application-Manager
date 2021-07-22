@@ -1,41 +1,51 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<meta charset="utf-8"/>
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet"   
-  href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	
+<!-- Favicon ---------------------------------------->
+	<link rel="icon" type="image/png" href="favicon.png" />
+
+<!-- CSS ---------------------------------------->	
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="style.css">
+	
+<!-- Bootstrap CSS ---------------------------------------->
+  	<link rel="stylesheet"   
+  	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	 crossorigin="anonymous">
-
-<link rel="icon" type="image/png" href="favicon.png" />
-
+	 
+<!-- Google Fonts ---------------------------------------->
+	<link href='https://fonts.googleapis.com/css?family=Cutive Mono' rel='stylesheet'>
+ 	<link href='https://fonts.googleapis.com/css?family=Chango' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Della Respira' rel='stylesheet'>
 
 <title>Job Application Manager</title>
 </head>
-<body>
-<!-- Image and text -->
-<nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="#">
-    <img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
 
-    
-    Job Application Manager
-  </a>
-</nav>
+
+<body>
+
+<section id ="about">
+<div class = "container">
 <div align="center">
     <h1>Job List</h1>
     <a href="/new">Add New Job Application </a>
     <br/><br/>
-    <table border="1" cellpadding="10">
+    <table class="table table-bordered table-striped table-dark">
+   
         <thead>
             <tr>
-                <th>Job ID</th>
-                <th>Date Applied</th>
-                <th>Company Name</th>
+                <th>ID</th>
+                <th>Applied</th>
+                <th>Company</th>
                 <th>Job Title</th>
                 <th>Location</th>
                 <th>Salary</th>
+                <th>Notes</th>
+                <th>Status</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -47,6 +57,8 @@
                 <td th:text="${job.jobtitle}">Job Title</td>
                 <td th:text="${job.location}">Location</td>
                 <td th:text="${job.salary}">Salary</td>
+                <td th:text="${job.notes}">Notes</td>
+                <td th:text="${job.status}">Status</td>
                 
                 <td>
 	                <a th:href="@{'/edit/' + ${job.id}}">Edit</a>
@@ -56,6 +68,7 @@
             </tr>
         </tbody>
     </table>
+    </div>
 </div>   
 </body>
 </html>

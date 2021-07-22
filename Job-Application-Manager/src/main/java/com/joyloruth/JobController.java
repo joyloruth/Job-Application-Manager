@@ -1,5 +1,6 @@
 package com.joyloruth;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,6 +32,20 @@ public class JobController {
 		public String showNewJobPage(Model model) {
 			Job job = new Job();
 			model.addAttribute("job", job);
+			
+			ArrayList<String> statusList = new ArrayList<String>();
+			statusList.add("Applying");
+			statusList.add("Applied");
+			statusList.add("Interviewing");
+			statusList.add("Reviewing Offer");
+			statusList.add("Accepted Offer");
+			statusList.add("Awaiting Feedback");
+			statusList.add("No Reponse");
+			statusList.add("Applying");
+			statusList.add("Testing");
+			statusList.add("Rejected");
+			
+			model.addAttribute("statusList", job.getStatus());
 			
 			return "new_job";
 		}

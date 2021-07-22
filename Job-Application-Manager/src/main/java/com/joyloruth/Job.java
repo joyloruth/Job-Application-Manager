@@ -18,19 +18,15 @@ public class Job {
 	private String location;
 	private float salary;
 	private Date dateapplied;
+	private String notes;
+	private String status;
 	
 	public Job() {
 		
 	}
 	
 
-
-
-
-
-
-
-	public Job(Long id, String name, String jobtitle, String location, float salary, Date dateapplied) {
+	public Job(Long id, String name, String jobtitle, String location, float salary, Date dateapplied, String notes, String status) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -38,7 +34,12 @@ public class Job {
 		this.location = location;
 		this.salary = salary;
 		this.dateapplied = dateapplied;
+		this.notes = notes;
+		this.status = status;
 	}
+
+
+	
 
 
 	@Id
@@ -92,11 +93,22 @@ public class Job {
 	public void setDateapplied(Date dateapplied) {
 		this.dateapplied = dateapplied;
 	}
+	
+	public String getNotes() {
+		return notes;
+	}
 
+	public void setNotes(String notes) {
+		this.notes = notes;
+	}
 
+	public String getStatus() {
+		return status;
+	}
 
-
-
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
 
 
