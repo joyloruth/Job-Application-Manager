@@ -12,6 +12,7 @@ public class Job {
 	
 	private Long id;
 	private String name;
+	private String jobtitle;
 	private String location;
 	private float salary;
 	
@@ -19,14 +20,17 @@ public class Job {
 		
 	}
 	
-	
-	public Job(Long id, String name, String location, float salary) {
+
+	public Job(Long id, String name, String jobtitle, String location, float salary) {
 		super();
 		this.id = id;
 		this.name = name;
+		this.jobtitle = jobtitle;
 		this.location = location;
 		this.salary = salary;
 	}
+
+
 
 
 
@@ -63,8 +67,21 @@ public class Job {
 	public void setSalary(float salary) {
 		this.salary = salary;
 	}
+	
+
+	public String getJobtitle() {
+		return jobtitle;
+	}
 
 
+	public void setJobtitle(String jobtitle) {
+		this.jobtitle = jobtitle;
+	}
+
+
+	
+	
+	
 	@Override
 	public String toString() {
 		return "Job [id=" + id + ", name=" + name + ", location=" + location + ", salary=" + salary + "]";
