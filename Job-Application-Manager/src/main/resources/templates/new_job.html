@@ -6,9 +6,19 @@
 <title>Create New Job</title>
 </head>
 <body>
+
+<!-- NAVIGATION BAR -->
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+   <!--  <img src="/MASH-Game-App/src/main/resources/images/mashlogo.png" width="30" height="30" class="d-inline-block align-top" alt=""> -->
+   Job Tracker
+  </a>
+</nav>
+
 	<div align="center">
 		<h1>Create New Job</h1>
 		<br />
+	<div class="container2">
 		<form action="#" th:action="@{/save}" th:object="${job}"
 			method="post">
 
@@ -16,6 +26,10 @@
 			<tr>
 					<td>Job Id:</td>
 					<td><input type="text" th:field="*{id}" /></td>
+				</tr>
+				<tr>
+					<td>Date Applied:</td>
+					<td><input type="text" th:field="*{dateapplied}" /></td>
 				</tr>
 				<tr>
 					<td>Company Name:</td>
@@ -39,6 +53,7 @@
 				</tr>
 			</table>
 		</form>
+		</div>
 	</div>
 </body>
 </html>

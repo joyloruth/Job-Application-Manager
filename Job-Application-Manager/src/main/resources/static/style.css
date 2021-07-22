@@ -265,3 +265,10 @@ html,body
   
 }
 
+.container2{
+  border-radius: 15px;
+  background-color: rgba(47, 42, 48, 0.404);
+  padding: 20px;
+  box-shadow: 7px 7px 10px black;
+}
+

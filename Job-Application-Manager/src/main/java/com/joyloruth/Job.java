@@ -1,5 +1,7 @@
 package com.joyloruth;
 
+import java.sql.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,23 +17,28 @@ public class Job {
 	private String jobtitle;
 	private String location;
 	private float salary;
+	private Date dateapplied;
 	
 	public Job() {
 		
 	}
 	
 
-	public Job(Long id, String name, String jobtitle, String location, float salary) {
+
+
+
+
+
+
+	public Job(Long id, String name, String jobtitle, String location, float salary, Date dateapplied) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.jobtitle = jobtitle;
 		this.location = location;
 		this.salary = salary;
+		this.dateapplied = dateapplied;
 	}
-
-
-
 
 
 	@Id
@@ -78,10 +85,21 @@ public class Job {
 		this.jobtitle = jobtitle;
 	}
 
+	public Date getDateapplied() {
+		return dateapplied;
+	}
 
-	
-	
-	
+	public void setDateapplied(Date dateapplied) {
+		this.dateapplied = dateapplied;
+	}
+
+
+
+
+
+
+
+
 	@Override
 	public String toString() {
 		return "Job [id=" + id + ", name=" + name + ", location=" + location + ", salary=" + salary + "]";
