@@ -33,7 +33,7 @@ public class JobController {
 			Job job = new Job();
 			model.addAttribute("job", job);
 			
-			ArrayList<String> statusList = new ArrayList<String>();
+			/*ArrayList<String> statusList = new ArrayList<String>();
 			statusList.add("Applying");
 			statusList.add("Applied");
 			statusList.add("Interviewing");
@@ -45,7 +45,7 @@ public class JobController {
 			statusList.add("Testing");
 			statusList.add("Rejected");
 			
-			model.addAttribute("statusList", job.getStatus());
+			model.addAttribute("statusList", job.getStatus());*/
 			
 			return "new_job";
 		}

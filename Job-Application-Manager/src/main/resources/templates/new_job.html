@@ -18,7 +18,7 @@
 	<div align="center">
 		<h1>Create New Job</h1>
 		<br />
-	<div class="container2">
+	<div class="container">
 		<form action="#" th:action="@{/save}" th:object="${job}"
 			method="post">
 
@@ -48,12 +48,12 @@
 					<td><input type="text" th:field="*{salary}" /></td>
 				</tr>
 				<tr>
-                    <td>Profession:</td>
-                    <td><form:select path="status" items="${statusList}" /></td>
-                </tr>
+					<td>Status:</td>
+					<td><input type="text" th:field="*{status}" /></td>
+				</tr>
 				<tr>
 					<td>Notes:</td>
-					<td><input type="text" th:field="*{notes}" /></td>
+					<td><input type="textarea" th:field="*{notes}" /></td>
 				</tr>
 				
 				<tr>
